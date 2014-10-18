@@ -1,0 +1,76 @@
+<!doctype html>
+<html ng-app="Fidelity_app">
+  <head>
+    
+    <link rel="stylesheet" type="text/css" href="fidelity_app_css.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <script type="text/javascript" src="fidelity_app_data.js"></script>
+	<script type="text/javascript" src="fidelity_app_js.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+  
+      google.load("visualization", "1", {packages:["corechart"]});
+      //google.setOnLoadCallback(drawChart);
+	  
+    </script>
+    
+  </head>
+  <body>
+  
+   
+	<!--<img src="bulb.png" style="height:50%;width:50%;"/>-->
+
+	<h2>Batti Jalao SENTIMENT ANALYSIS</h2>
+	
+	<div class="row">
+	<div class="col-sm-3">
+		<ul class="nav nav-tabs">
+			<li class="active" id="U1" onclick="changeclass(1)"><a href="#home" data-toggle="tab">Influence Factors</a></li>
+			<li><a href="#profile" id="U2" onclick="changeclass(2)" data-toggle="tab">Product Performance</a></li>
+			<li><a href="#messages" id="U3" onclick="changeclass(3)" data-toggle="tab">Daily Metric</a></li>
+			<li><a href="#settings" id="U4" onclick="changeclass(4)" data-toggle="tab">Product Comparison</a></li>
+		</ul>
+	</div><!-- col -->
+
+	<div class="col-sm-9">
+		<div class="tab-content">
+		    
+			<div class="tab-pane active" id="U1_div">
+
+			<input type="text" class="form-control" placeholder="Enter a product" id="name"/></br>
+			<input type="button" class="btn btn-success" value="GO" onclick="drawColumnChart()">
+			<div id="column_chart_div" style="width: 900px; height: 500px;"></div>
+			</div>
+			<div class="tab-pane" id="U2_div">
+			
+			<input type="text" class="form-control" placeholder="Enter a product" id="product"/> </br>   
+	        <input type="button" value="GO" class="btn btn-success" onclick="drawLineChart()">
+			<div id="line_chart_div" style="width: 900px; height: 500px;">	</div>
+			</div>
+			<div class="tab-pane" id="U3_div">
+			<input type="text" class="form-control"  placeholder="Product No.1" id="product3" placeholder="product"/>
+			                                    <h2>on</h2>    
+			<select id="date" style="width:100px;height:30px;border-radius:10px;">
+			<option value="2014-20-10">2014-20-10</option>
+			<option value="2014-19-10">2014-19-10</option>
+			<option value="2014-18-10">2014-18-10</option>
+			</select>
+			</br></br>
+			<input type="button" class="btn btn-success" value="GO" onclick="drawPieChart()">
+            <div id="pie_chart_div"style="width: 900px; height: 500px;"></div>
+			</div>
+			<div class="tab-pane" id="U4_div">
+			<pre><input type="text" class="form-control"  placeholder="Product No.1" id="product1"/>
+			                                    <h2>VS</h2>    
+			<input type="text"  class="form-control" placeholder="Product No.2" id="product2"/></pre>
+			<input type="button" class="btn btn-success" value="GO" onclick="drawLineChart2()">
+			<div id="line_chart_div2" style="width: 900px; height: 500px;">
+			</div>
+			</div>
+		</div><!-- tab-content -->
+	</div><!-- col -->
+</div><!-- row -->
+	
+	
+  </body>
+</html>
